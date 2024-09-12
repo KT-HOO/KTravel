@@ -386,7 +386,7 @@ https://dev.msaez.io/#/142835195/storming/travel
    - Kafka를 사용한 Event Driven Architecture 비동기 통신
    - Vue.js 프로젝트 구조 설정 (Vue CLI 활용)
    - Docker를 이용한 컨테이너화 환경 구성
-   - @@@@@ Azure DevOps를 활용한 CI/CD 파이프라인 구축
+   - Kubernetes를 활용한 컨테이너 스케일 관리
 
 ### 2. 백엔드 마이크로서비스 개발
 이전 단계에서 도출된 아키텍처에 따라, 각 BC별로 대변되는 마이크로 서비스들을 Spring Boot로 구현하였다.    
