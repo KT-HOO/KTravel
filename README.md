@@ -492,9 +492,11 @@ https://dev.msaez.io/#/142835195/storming/travel
 - 여행 계획 데이터는 **Axios**를 사용하여 백엔드에서 가져오며, 사용자의 행동에 따라 추가, 수정 및 삭제됩니다.
 - API 요청 실패 시 적절한 에러 메시지를 표시하여 사용자 경험을 개선하였습니다.
 
+<br/>
+
 ### 주요 코드 및 트러블슈팅
 
-#### 1. PlanManagement.vue
+#### (1) PlanManagement.vue
 `PlanManagement.vue`는 여행 계획을 생성, 수정, 삭제하고 AI 추천을 요청할 수 있는 Vue 컴포넌트입니다. 이 컴포넌트는 Axios를 통해 백엔드 API와 통신하여 데이터를 관리합니다.
 
 ##### 주요 기능:
@@ -510,15 +512,15 @@ https://dev.msaez.io/#/142835195/storming/travel
 - AI로부터 받은 추천 데이터는 마크다운 형식을 포함하고 있었습니다. 하지만 Vue.js 화면에서 이를 그대로 출력하면 텍스트로만 표시되었고, 마크다운 문법이 적용되지 않아 데이터가 제대로 렌더링되지 않았습니다.
 ---
 
-#### 2. 해결 방법: `vue-markdown@2` 설치 및 적용
+#### (2) 해결 방법: `vue-markdown@2` 설치 및 적용
 
 AI 데이터를 마크다운 형식으로 렌더링하기 위해 `vue-markdown` 패키지를 사용하였습니다.
 
-##### 2.1 `vue-markdown@2` 설치
+##### (2-1) `vue-markdown@2` 설치
 
 `vue-markdown@2` 패키지를 프로젝트에 설치했습니다. 최신 버전에서의 호환성 문제를 방지하기 위해 명시적으로 버전 `2`를 설치했습니다.
 
-##### 2.2 vue-markdown 컴포넌트 등록
+##### (2-2) vue-markdown 컴포넌트 등록
 
 vue-markdown을 사용하기 위해 PlanManagement.vue 파일에서 vue-markdown을 가져와 Vue 컴포넌트로 등록했습니다.
 
@@ -531,7 +533,7 @@ export default {
   }
 };
 ```
-##### 2.3 마크다운 데이터 렌더링
+##### (2-3) 마크다운 데이터 렌더링
 AI로부터 받은 추천 데이터를 화면에 마크다운 형식으로 표시하기 위해 vue-markdown 컴포넌트를 사용했습니다. AI 추천 데이터가 존재하는 경우에만 마크다운으로 렌더링하고, 그렇지 않은 경우에는 대체 텍스트를 표시하도록 조건부 렌더링을 구현했습니다.
 ```bash
 <vue-markdown v-if="selectedPlan.aiRecommendation">
@@ -540,8 +542,6 @@ AI로부터 받은 추천 데이터를 화면에 마크다운 형식으로 표�
 <p v-else>아직 AI 추천이 없습니다.</p>
 ```
 이 코드는 selectedPlan에 aiRecommendation 데이터가 존재할 때는 마크다운으로 데이터를 렌더링하고, 없을 경우에는 안내 메시지를 표시합니다.
-
-
 
 <br/>
 <br/>
