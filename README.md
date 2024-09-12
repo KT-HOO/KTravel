@@ -216,6 +216,7 @@ Kt-ravel은 다양한 사용자들이 여행 계획을 생성하고 공유할 �
    - MSA 기반 설계:
      - Spring Boot 마이크로서비스
      - Vue.js 프론트엔드
+     - Kafka 비동기 통신
    - Azure 클라우드 서비스 활용:
      - Azure Kubernetes Service (AKS)를 기반으로 한 컨테이너 오케스트레이션
      - Azure API Management를 활용한 API Gateway 구현
@@ -393,6 +394,7 @@ https://dev.msaez.io/#/142835195/storming/travel
 
 ### 1. 개발 환경 구축    
    - Spring Boot 개발 환경 설정
+   - Kafka를 사용한 Event Driven Architecture 비동기 통신
    - Vue.js 프로젝트 구조 설정 (Vue CLI 활용)
    - Docker를 이용한 컨테이너화 환경 구성
    - @@@@@ Azure DevOps를 활용한 CI/CD 파이프라인 구축
