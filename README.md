@@ -1,6 +1,6 @@
 <div style="text-align: center;">
   <img src="https://github.com/user-attachments/assets/e4f51055-71d2-451b-babb-17fb199a9995" width="30%" height="30%" />
-
+  <img src="https://github.com/KT-HOO/KTravel/blob/main/img/Kt-ravel%20%EB%A1%9C%EA%B3%A0.png" width="30%" height="30%" />
 </div>
 
 
