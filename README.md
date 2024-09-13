@@ -1,19 +1,20 @@
 <div style="text-align: center;">
-  <img src="https://github.com/KT-HOO/KTravel/blob/main/img/Kt-ravel%20%EB%A1%9C%EA%B3%A0.png" width="30%" height="30%" />
+  <img src="https://github.com/user-attachments/assets/e4f51055-71d2-451b-babb-17fb199a9995" width="30%" height="30%" />
+
 </div>
 
 
-# 여행계획 생성 및 공유 서비스(Kt-ravel)
+# 🌍✈️여행계획 생성 및 공유 서비스(Kt-ravel)
 
 Kt-ravel은 다양한 사용자들이 여행 계획을 생성하고 공유할 수 있는 MSA 기반의 플랫폼입니다.   
 <br/>
-사용자는 각자 다른 계획을 만들고, 다른 사용자의 계획을 팔로우하며, 크레딧 시스템을 통해 활동할 수 있습니다.
+사용자는 각자 다른 계획을 만들고, 다른 사용자의 계획을 팔로우하며, 크레딧 시스템을 통해 활동할 수 있습니다. 🚀
 
 <br/>
 <br/>
 <br/>
 
-## 목차
+## 📜목차
 
 **I. [서비스 시나리오](#서비스-시나리오)**    
  - [기능적 요구사항](#기능적-요구사항functional-requirements)
@@ -47,9 +48,9 @@ Kt-ravel은 다양한 사용자들이 여행 계획을 생성하고 공유할 �
 <br/>
 <br/>
   
-## I. 서비스 시나리오
+## I. 서비스 시나리오🎯
 
-### 기능적 요구사항(Functional Requirements)
+### 기능적 요구사항(Functional Requirements)🛠️
 
 ### 1. 회원 가입(Sign up) 및 토큰(Token) 관리   
    **1.1 회원 가입 및 로그인**  
@@ -59,7 +60,7 @@ Kt-ravel은 다양한 사용자들이 여행 계획을 생성하고 공유할 �
    - 사용자는 충전/결제 시스템을 통해 토큰을 획득할 수 있어야 한다.
    - 토큰은 여행 계획 추천 기능에 사용될 수 있어야 한다.
 
-### 2. 여행 계획(Plan) 생성/수정/삭제, 추천(Recommendation)     
+### 2. 여행 계획(Plan) 생성/수정/삭제, 추천(Recommendation) ✅
    **2.1 여행 계획 생성**  
    - 사용자는 목적지(location), 날짜(travelDate), 예산(budget), 인원수(groupSize), 세부 활동(details) 등의 상세 내용을 포함한 여행 계획을 생성할 수 있어야 한다.
    - 목적지(lacation), 날짜(travelDate), 인원수(groupSize)는 필수적으로 입력되야 한다.
@@ -91,7 +92,7 @@ Kt-ravel은 다양한 사용자들이 여행 계획을 생성하고 공유할 �
    - 각 추천에는 100개의 토큰이 소모되어야 한다.
    - 추천된 모든 계획은 별도의 대시보드에서 확인 가능해야 한다. 
 
-### 3. 사용자 팔로우/언팔로우(Follow/Unfollow)    
+### 3. 사용자 팔로우/언팔로우(Follow/Unfollow) 🌐
    **3.1 팔로우 기능**  
    - 사용자는 다른 사용자를 팔로우할 수 있다.
    
@@ -215,7 +216,6 @@ Kt-ravel은 다양한 사용자들이 여행 계획을 생성하고 공유할 �
    - MSA 기반 설계:
      - Spring Boot 마이크로서비스
      - Vue.js 프론트엔드
-     - Kafka 비동기 통신
    - Azure 클라우드 서비스 활용:
      - Azure Kubernetes Service (AKS)를 기반으로 한 컨테이너 오케스트레이션
      - Azure API Management를 활용한 API Gateway 구현
@@ -288,12 +288,12 @@ https://dev.msaez.io/#/142835195/storming/travel
     - 사용자 간 연결을 지원하는 보조 서비스    
     - 연간 Up-time SLA 수준 99.90% 목표    
     - 배포주기는 한 달에 1-2회로 유연하게 운영    
-	    
+       
   - like     
     - 사용자 상호작용을 증진시키는 보조 서비스      
     - 연간 Up-time SLA 수준 99.90% 목표    
     - 배포주기는 한 달에 1-2회로 유연하게 운영     
-	    
+       
 (3) General Domain: 비즈니스에 필요하지만, 일반적인 기능만을 담당하는 영역    
   - notification    
     - 다른 서비스들의 이벤트를 기반으로 알림을 처리하는 서비스
@@ -381,14 +381,23 @@ https://dev.msaez.io/#/142835195/storming/travel
   
 ## V. MSA개발 및 개발관리
 
-### 1. 개발 환경 구축    
+- 분산 트랜잭션 (Saga 패턴):
+  - Kt-ravel에서 각 마이크로서비스 간의 트랜잭션을 분산 처리할 수 있는 Saga 패턴을 구현해야 합니다. 예를 들어, 여행 계획을 생성하는 과정에서 여러 서비스가 연동되는 경우, 트랜잭션 실패 시 보상 트랜잭션(Compensation)이 필요합니다.
+- 보상 처리 (Compensation):
+  - 여행 계획이 실패하거나 수정할 경우 이를 원상 복구하는 보상 트랜잭션을 명확히 정의합니다. 보상 트랜잭션은 트랜잭션 흐름 중 오류가 발생할 때 실행됩니다.
+- 단일 진입점 (Gateway):
+  - 서비스의 트래픽 제어를 위해 API Gateway를 설정하여, 모든 클라이언트 요청이 단일 진입점을 통해 각 서비스로 라우팅될 수 있게 합니다. 이를 통해 인증 및 부하 분산을 효율적으로 처리합니다.
+- 분산 데이터 프로젝션:
+  - CQRS(Command Query Responsibility Segregation) 패턴을 도입해, 각 서비스의 데이터를 분산하여 저장하고, 읽기/쓰기 작업을 분리하여 데이터 일관성을 유지합니다.
+
+
+### 1. 개발 환경 구축 💻    
    - Spring Boot 개발 환경 설정
-   - Kafka를 사용한 Event Driven Architecture 비동기 통신
    - Vue.js 프로젝트 구조 설정 (Vue CLI 활용)
    - Docker를 이용한 컨테이너화 환경 구성
-   - Kubernetes를 활용한 컨테이너 스케일 관리
+   - @@@@@ Azure DevOps를 활용한 CI/CD 파이프라인 구축
 
-### 2. 백엔드 마이크로서비스 개발
+### 2. 백엔드 마이크로서비스 개발 🐳
 이전 단계에서 도출된 아키텍처에 따라, 각 BC별로 대변되는 마이크로 서비스들을 Spring Boot로 구현하였다.    
 구현한 각 서비스를 로컬에서 실행하는 방법은 아래와 같다 (각자의 포트넘버는 8081 ~ 8086 이다)
 
@@ -408,7 +417,7 @@ https://dev.msaez.io/#/142835195/storming/travel
      **(1) gateway 스프링부트 App을 추가 후 application.yaml내에 각 마이크로 서비스의 routes 를 추가하고 gateway 서버의 포트를 8088 으로 설정**
        
           - application.yaml 예시
-	  
+     
 ```
       spring:
         profiles: default
@@ -429,10 +438,10 @@ https://dev.msaez.io/#/142835195/storming/travel
 
 <br/>
 
- **(2) Kubernetes용 Deployment.yaml을 작성하고, Kubernetes에 Deploy를 생성함**
+    **(2) Kubernetes용 Deployment.yaml을 작성하고, Kubernetes에 Deploy를 생성함**
 
           - Deployment.yaml 예시
-	  
+     
 ```
       apiVersion: apps/v1
       kind: Deployment
@@ -492,11 +501,9 @@ https://dev.msaez.io/#/142835195/storming/travel
 - 여행 계획 데이터는 **Axios**를 사용하여 백엔드에서 가져오며, 사용자의 행동에 따라 추가, 수정 및 삭제됩니다.
 - API 요청 실패 시 적절한 에러 메시지를 표시하여 사용자 경험을 개선하였습니다.
 
-<br/>
-
 ### 주요 코드 및 트러블슈팅
 
-#### (1) PlanManagement.vue
+#### 1. PlanManagement.vue
 `PlanManagement.vue`는 여행 계획을 생성, 수정, 삭제하고 AI 추천을 요청할 수 있는 Vue 컴포넌트입니다. 이 컴포넌트는 Axios를 통해 백엔드 API와 통신하여 데이터를 관리합니다.
 
 ##### 주요 기능:
@@ -508,20 +515,19 @@ https://dev.msaez.io/#/142835195/storming/travel
 - **API 요청 실패 처리**: 처음에는 API 요청 실패 시 단순히 오류만 출력했습니다. 이를 개선하여 `alert()` 메시지를 추가해, API 요청에 실패했을 때 사용자에게 안내 메시지가 표시되도록 하였습니다.
 - **Vue Router 문제**: 계획 수정 시 `$router.push()`가 정상적으로 작동하지 않았습니다. 이는 `params` 전달 방식 문제였기에 계획 데이터를 JSON 직렬화하여 `query` 파라미터로 전달하는 방식으로 수정해 해결했습니다.
 - **마크다운 처리문제**: AI로부터 받은 데이터를 보기 좋게 표시하기 위해 마크다운 형식으로 렌더링하려 했습니다. 처음에는 단순한 텍스트로만 표시되었기 때문에, 이를 해결하기 위해 `vue-markdown@2`을 설치하고 적용하는 과정에서 발생한 문제를 해결했습니다.
-- 
-#### (2) 문제점
+#### 1. 문제점
 - AI로부터 받은 추천 데이터는 마크다운 형식을 포함하고 있었습니다. 하지만 Vue.js 화면에서 이를 그대로 출력하면 텍스트로만 표시되었고, 마크다운 문법이 적용되지 않아 데이터가 제대로 렌더링되지 않았습니다.
 ---
 
-#### (3) 해결 방법: `vue-markdown@2` 설치 및 적용
+#### 2. 해결 방법: `vue-markdown@2` 설치 및 적용
 
 AI 데이터를 마크다운 형식으로 렌더링하기 위해 `vue-markdown` 패키지를 사용하였습니다.
 
-##### (3-1) `vue-markdown@2` 설치
+##### 2.1 `vue-markdown@2` 설치
 
 `vue-markdown@2` 패키지를 프로젝트에 설치했습니다. 최신 버전에서의 호환성 문제를 방지하기 위해 명시적으로 버전 `2`를 설치했습니다.
 
-##### (3-2) vue-markdown 컴포넌트 등록
+##### 2.2 vue-markdown 컴포넌트 등록
 
 vue-markdown을 사용하기 위해 PlanManagement.vue 파일에서 vue-markdown을 가져와 Vue 컴포넌트로 등록했습니다.
 
@@ -534,7 +540,7 @@ export default {
   }
 };
 ```
-##### (3-3) 마크다운 데이터 렌더링
+##### 2.3 마크다운 데이터 렌더링
 AI로부터 받은 추천 데이터를 화면에 마크다운 형식으로 표시하기 위해 vue-markdown 컴포넌트를 사용했습니다. AI 추천 데이터가 존재하는 경우에만 마크다운으로 렌더링하고, 그렇지 않은 경우에는 대체 텍스트를 표시하도록 조건부 렌더링을 구현했습니다.
 ```bash
 <vue-markdown v-if="selectedPlan.aiRecommendation">
@@ -544,11 +550,8 @@ AI로부터 받은 추천 데이터를 화면에 마크다운 형식으로 표�
 ```
 이 코드는 selectedPlan에 aiRecommendation 데이터가 존재할 때는 마크다운으로 데이터를 렌더링하고, 없을 경우에는 안내 메시지를 표시합니다.
 
-<br/>
-<br/>
-<br/>
-  
-## VI. 클라우드(Azure) 배포
+
+## VI. 클라우드(Azure) 배포 🐳
 
 - Azure 리소스 그룹 및 AKS(Azure Kubernetes Service) 클러스터 생성<br/>
   <img width="70%" alt="image" src="https://github.com/user-attachments/assets/248daa26-093c-4e3f-9e66-491a66a458e5"><br/>
